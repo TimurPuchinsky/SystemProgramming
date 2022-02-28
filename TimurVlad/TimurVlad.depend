@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1642693626 source:c:\users\тимур\source\repos\timurvlad\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
