@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1648886155 source:c:\prog\codeblocks2\timurvlad166\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<locale.h>
+
