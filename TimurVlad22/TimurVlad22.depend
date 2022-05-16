@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1652688843 source:c:\prog\codeblocks2\timurvlad22\main.c
+	<cairo.h>
+	<cairo-pdf.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
+1379756778 c:\prog\codeblocks2\gtk\include\cairo\cairo.h
+	"cairo-version.h"
+	"cairo-features.h"
+	"cairo-deprecated.h"
+
+1379756778 c:\prog\codeblocks2\gtk\include\cairo\cairo-version.h
+
+1379756778 c:\prog\codeblocks2\gtk\include\cairo\cairo-features.h
+
+1379756778 c:\prog\codeblocks2\gtk\include\cairo\cairo-deprecated.h
+
+1379756778 c:\prog\codeblocks2\gtk\include\cairo\cairo-pdf.h
+	"cairo.h"
+
