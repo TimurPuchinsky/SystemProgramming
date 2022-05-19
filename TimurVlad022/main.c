@@ -4,13 +4,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
-
 int main()
 {
     cairo_surface_t *surface;//ïîâåðõíîñòü
     cairo_t *cr;//èñòî÷íèê
-    surface = cairo_pdf_surface_create("file1.pdf", 800, 800);//ñîçäàíèå ïîâåðõíîñòè
+    surface = cairo_pdf_surface_create("file2.pdf", 800, 800);//ñîçäàíèå ïîâåðõíîñòè
     cr = cairo_create(surface);
     cairo_set_source_rgb(cr, 0, 65535, 0);
     cairo_set_line_width(cr, 6);

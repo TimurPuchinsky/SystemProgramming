@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1644580996 source:c:\prog\codeblocks2\timurvlad7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	<time.h>
+	<conio.h>
+
