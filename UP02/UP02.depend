@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1653899597 source:c:\users\инет\desktop\up02\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	<io.h>
+	<sys/fcntl.h>
+	<sys/stat.h>
+	<windows.h>
+	<conio.h>
+	<time.h>
+
