@@ -117,79 +117,79 @@
 //задачи
 //-------------------------------------------------
 
-//RECT mas;
-//RECT rct;
-//double a=0;
-//void FillMas()
-//{
-//mas.left=rand()%1200/2;
-//mas.top=rand()%600/2;
-//mas.right=mas.left+100;
-//mas.bottom=mas.top+100;
-//}
-//
-//void WinMove()
-//{
-//mas.left +=3;
-//mas.right +=3;
-//mas.top= 300-(int)(200*sin(a));
-//mas.bottom=mas.top+100;
-//a+=0.05;
-//}
-//
-//void WinShow(HDC dc)
-//{
-//SelectObject(dc, GetStockObject(DC_BRUSH));
-//SetDCBrushColor(dc, RGB(255,255,255));
-//Rectangle(dc,0,0,1200,600);
-//
-//SelectObject(dc, GetStockObject(DC_BRUSH));
-//SetDCBrushColor(dc, RGB(0,255,0));
-//SelectObject(dc, GetStockObject(DC_PEN));
-//SetDCPenColor(dc, RGB(0,0,0));
-//
-//Rectangle(dc,mas.left, mas.top, mas.right,mas.bottom);
-//}
-//LRESULT WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
-//{
-//if (message == WM_DESTROY)
-//PostQuitMessage(0);
-//
-//else return DefWindowProcA(hwnd, message, wparam, lparam);
-//}
-//
-//int main()
-//{
-//WNDCLASSA wcl;
-//memset(&wcl, 0, sizeof(WNDCLASSA));
-//wcl.lpszClassName = "muWindows";
-//wcl.lpfnWndProc = WndProc;
-//RegisterClassA(&wcl);
-//
-//HWND hwnd;
-//hwnd = CreateWindow("muWindows", "Окно", WS_OVERLAPPEDWINDOW, 0, 0, 1200, 600, NULL, NULL, NULL, NULL);
-//
-//HDC dc = GetDC(hwnd);
-//
-//ShowWindow(hwnd, SW_NORMAL);
-//FillMas();
-//
-//MSG msg;
-//while(1)
-//{
-//if (PeekMessageA(&msg,NULL,0,0,PM_REMOVE))
-//{
-//if (msg.message == WM_QUIT)break;
-//TranslateMessage(&msg);
-//DispatchMessage(&msg);
-//}
-//
-//WinMove();
-//WinShow(dc);
-//Sleep(5);
-//}
-//return 0;
-//}
+RECT mas;
+RECT rct;
+double a=0;
+void FillMas()
+{
+    mas.left=rand()%1200/2;
+    mas.top=rand()%600/2;
+    mas.right=mas.left+100;
+    mas.bottom=mas.top+100;
+    }
+
+    void WinMove()
+    {
+    mas.left +=3;
+    mas.right +=3;
+    mas.top= 300-(int)(200*sin(a));
+    mas.bottom=mas.top+100;
+    a+=0.05;
+    }
+
+    void WinShow(HDC dc)
+    {
+    SelectObject(dc, GetStockObject(DC_BRUSH));
+    SetDCBrushColor(dc, RGB(255,255,255));
+    Rectangle(dc,0,0,1200,600);
+
+    SelectObject(dc, GetStockObject(DC_BRUSH));
+    SetDCBrushColor(dc, RGB(0,255,0));
+    SelectObject(dc, GetStockObject(DC_PEN));
+    SetDCPenColor(dc, RGB(0,0,0));
+
+    Rectangle(dc,mas.left, mas.top, mas.right,mas.bottom);
+    }
+    LRESULT WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
+    {
+    if (message == WM_DESTROY)
+    PostQuitMessage(0);
+
+    else return DefWindowProcA(hwnd, message, wparam, lparam);
+    }
+
+    int main()
+    {
+    WNDCLASSA wcl;
+    memset(&wcl, 0, sizeof(WNDCLASSA));
+    wcl.lpszClassName = "muWindows";
+    wcl.lpfnWndProc = WndProc;
+    RegisterClassA(&wcl);
+
+    HWND hwnd;
+    hwnd = CreateWindow("muWindows", "Окно", WS_OVERLAPPEDWINDOW, 0, 0, 1200, 600, NULL, NULL, NULL, NULL);
+
+    HDC dc = GetDC(hwnd);
+
+    ShowWindow(hwnd, SW_NORMAL);
+    FillMas();
+
+    MSG msg;
+    while(1)
+    {
+    if (PeekMessageA(&msg,NULL,0,0,PM_REMOVE))
+    {
+    if (msg.message == WM_QUIT)break;
+    TranslateMessage(&msg);
+    DispatchMessage(&msg);
+    }
+
+    WinMove();
+    WinShow(dc);
+    Sleep(5);
+    }
+    return 0;
+}
 
 //-------------------------------------------------
 
@@ -308,69 +308,69 @@
 
 //-------------------------------------------------
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <windows.h>
-
-#define bt_2_id 2
-#define edt_id 3
-#define static_id 4
-
-HWND bt_quit;
-
-LRESULT WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
-{
-if (message == WM_DESTROY)
-PostQuitMessage(0);
-else if (message == WM_COMMAND)
-{
-if(bt_quit == lparam)
-PostQuitMessage(0);
-if (LOWORD(wparam) == bt_2_id)
-MessageBox(0, "button passed", "message", MB_OK);
-if (LOWORD(wparam) == edt_id)
-{
-char b[100] = "4";
-int nc = HIWORD(wparam);
-char c[100];
-GetWindowText(lparam, c, 100);
-if (nc == EN_KILLFOCUS)
-if(strcmp(c,b)==0)
-MessageBox(0, "true", "message", MB_OK);
-else
-MessageBox(0, "false", "message", MB_OK);
-}
-}
-else return DefWindowProcA(hwnd, message, wparam, lparam);
-}
-
-int main()
-{
-WNDCLASSA wcl;
-memset(&wcl, 0, sizeof(WNDCLASSA));
-wcl.lpszClassName = "Windows";
-wcl.lpfnWndProc = WndProc;
-RegisterClassA(&wcl);
-
-HWND hwnd;
-hwnd = CreateWindow("Windows", "Мое окно", WS_OVERLAPPEDWINDOW, 10, 10, 640, 480, NULL, NULL, NULL, NULL);
-ShowWindow(hwnd, SW_SHOWNORMAL);
-
-HWND bt_2;
-bt_2 = CreateWindow("button", "proverca", WS_VISIBLE | WS_CHILD, 110, 250, 100, 50, hwnd, bt_2_id, NULL, NULL);
-HWND statc = CreateWindow("static", "kak nazivaetsa evreiski novi god?", WS_VISIBLE | WS_CHILD , 50, 70, 270, 20, hwnd, static_id, NULL, NULL);
-HWND statc1 = CreateWindow("static", "1. xanyka", WS_VISIBLE | WS_CHILD , 50, 100, 115, 20, hwnd, static_id, NULL, NULL);
-HWND statc2 = CreateWindow("static", "2. yuom kipyr", WS_VISIBLE | WS_CHILD , 50, 130, 115, 20, hwnd, static_id, NULL, NULL);
-HWND statc3 = CreateWindow("static", "3. kvanpa", WS_VISIBLE | WS_CHILD , 50, 160, 115, 20, hwnd, static_id, NULL, NULL);
-HWND statc4 = CreateWindow("static", "4. Rosh hachana", WS_VISIBLE | WS_CHILD , 50, 190, 115, 20, hwnd, static_id, NULL, NULL);
-HWND statc5 = CreateWindow("static", "Vvedite nomer otveta:", WS_VISIBLE | WS_CHILD , 50, 220, 170, 20, hwnd, static_id, NULL, NULL);
-HWND edt = CreateWindow("edit", "", WS_VISIBLE | WS_CHILD | WS_BORDER, 210, 220, 30, 20, hwnd, edt_id, NULL, NULL);
-
-MSG msg;
-while(GetMessage(&msg, NULL, 0, 0))
-{
-TranslateMessage(&msg);
-DispatchMessage(&msg);
-}
-return 0;
-}
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <windows.h>
+//
+//#define bt_2_id 2
+//#define edt_id 3
+//#define static_id 4
+//
+//HWND bt_quit;
+//
+//LRESULT WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
+//{
+//if (message == WM_DESTROY)
+//PostQuitMessage(0);
+//else if (message == WM_COMMAND)
+//{
+//if(bt_quit == lparam)
+//PostQuitMessage(0);
+//if (LOWORD(wparam) == bt_2_id)
+//MessageBox(0, "button passed", "message", MB_OK);
+//if (LOWORD(wparam) == edt_id)
+//{
+//char b[100] = "4";
+//int nc = HIWORD(wparam);
+//char c[100];
+//GetWindowText(lparam, c, 100);
+//if (nc == EN_KILLFOCUS)
+//if(strcmp(c,b)==0)
+//MessageBox(0, "true", "message", MB_OK);
+//else
+//MessageBox(0, "false", "message", MB_OK);
+//}
+//}
+//else return DefWindowProcA(hwnd, message, wparam, lparam);
+//}
+//
+//int main()
+//{
+//WNDCLASSA wcl;
+//memset(&wcl, 0, sizeof(WNDCLASSA));
+//wcl.lpszClassName = "Windows";
+//wcl.lpfnWndProc = WndProc;
+//RegisterClassA(&wcl);
+//
+//HWND hwnd;
+//hwnd = CreateWindow("Windows", "Мое окно", WS_OVERLAPPEDWINDOW, 10, 10, 640, 480, NULL, NULL, NULL, NULL);
+//ShowWindow(hwnd, SW_SHOWNORMAL);
+//
+//HWND bt_2;
+//bt_2 = CreateWindow("button", "proverca", WS_VISIBLE | WS_CHILD, 110, 250, 100, 50, hwnd, bt_2_id, NULL, NULL);
+//HWND statc = CreateWindow("static", "kak nazivaetsa evreiski novi god?", WS_VISIBLE | WS_CHILD , 50, 70, 270, 20, hwnd, static_id, NULL, NULL);
+//HWND statc1 = CreateWindow("static", "1. xanyka", WS_VISIBLE | WS_CHILD , 50, 100, 115, 20, hwnd, static_id, NULL, NULL);
+//HWND statc2 = CreateWindow("static", "2. yuom kipyr", WS_VISIBLE | WS_CHILD , 50, 130, 115, 20, hwnd, static_id, NULL, NULL);
+//HWND statc3 = CreateWindow("static", "3. kvanpa", WS_VISIBLE | WS_CHILD , 50, 160, 115, 20, hwnd, static_id, NULL, NULL);
+//HWND statc4 = CreateWindow("static", "4. Rosh hachana", WS_VISIBLE | WS_CHILD , 50, 190, 115, 20, hwnd, static_id, NULL, NULL);
+//HWND statc5 = CreateWindow("static", "Vvedite nomer otveta:", WS_VISIBLE | WS_CHILD , 50, 220, 170, 20, hwnd, static_id, NULL, NULL);
+//HWND edt = CreateWindow("edit", "", WS_VISIBLE | WS_CHILD | WS_BORDER, 210, 220, 30, 20, hwnd, edt_id, NULL, NULL);
+//
+//MSG msg;
+//while(GetMessage(&msg, NULL, 0, 0))
+//{
+//TranslateMessage(&msg);
+//DispatchMessage(&msg);
+//}
+//return 0;
+//}

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1654245209 source:c:\prog\codeblocks2\up05\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+
