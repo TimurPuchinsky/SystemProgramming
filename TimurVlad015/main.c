@@ -48,7 +48,7 @@ LRESULT WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam) //функция
 int main()
 {
 
-ПРИМЕРЫ
+//ПРИМЕРЫ
 
     WNDCLASSA wcl;// переменная клаcса окон
     memset(&wcl, 0, sizeof(WNDCLASSA));//структура памяти

@@ -1,34 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <locale.h>
 
-int pls (int x, int y)
+int x, y, n;
+int pls ()
 {
     int a = x+y;
-    printf("%d\n",a);
+    printf("Сложение: %d\n",a);
 }
-int minos(int x, int y)
+int minos()
 {
     int b = x-y;
-    printf("%d\n",b);
+    printf("Вычитание: %d\n",b);
 }
 
-int del(int x, int y)
+int del()
 {
     int c = x/y;
-    printf("%d\n",c);
+    printf("Деление: %d\n",c);
 }
 
-int kompleks(int x, int y)
+int kompleks()
 {
     int d = sqrt (x^2 + y^2);
-    printf("%d\n",d);
+    printf("Модуль: %d\n",d);
 }
 
-int kompleks2(int x, int y, int n)
+int kompleks2()
 {
     int i = sqrt(x^2 + y^2);
     int e = i^n;
-    printf("%d\n",e);
+    printf("Возведение: %d\n",e);
 }
 

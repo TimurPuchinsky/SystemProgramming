@@ -11,3 +11,18 @@
 	<stdlib.h>
 	<math.h>
 
+1654412700 source:c:\users\timur\desktop\systemprogramming\up01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"biblioteca.c"
+	"biblioteca.h"
+
+1654412700 c:\users\timur\desktop\systemprogramming\up01\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<locale.h>
+
+1654412527 c:\users\timur\desktop\systemprogramming\up01\biblioteca.h
+
