@@ -2470,3 +2470,8 @@
 1379757316 c:\prog\codeblocks2\gtk\include\gtk-3.0\gtk\deprecated\gtkvseparator.h
 	<gtk/gtkseparator.h>
 
+1654412057 source:c:\users\timur\desktop\systemprogramming\timurvlad021gtk\main.c
+	<stdlib.h>
+	<gtk/gtk.h>
+	<cairo.h>
+

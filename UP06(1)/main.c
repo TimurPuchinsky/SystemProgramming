@@ -5,8 +5,8 @@
 #include <windows.h>
 #include <locale.h>
 #define bt_2_id 2
-#define edit_id 2
-#define bt_2_id 3
+#define edit_id 3
+//#define bt_2_id 3
 
 char rletter()
 {
@@ -26,19 +26,35 @@ LRESULT WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam) //функция
     {
 //        if(LOWORD(wparam) == bt_2_id)
 //            MessageBox(0,"Button pressed","Message", MB_OK);
-
-        if(bt_quit == lparam)
+        if (LOWORD(wparam) == bt_2_id)
+        {
+            int nw = HIWORD(wparam);
+            char d[100];
+            GetWindowText(lparam, d, 100);
+            char e = printf("%s\n", d);
+        }
+        if (LOWORD(wparam) == edit_id)
         {
             //LOWORD(wparam) == edit_id;
             int nc = HIWORD(wparam);
-            char c[1];
-            char Len = GetWindowText(edit_id, c, 1);
-            char stat = GetWindowText(bt_2_id, c, 1);
-                if(Len = stat)
+            char c[100];
+            char d[100];
+            GetWindowText(lparam, c, 100);
+            //char ed = GetWindowText(edit_id, c, 1);
+            //char stat = GetWindowText(bt_2_id, c, 1);
+            if (nc == EN_UPDATE)
+            {
+                char ed = printf("%s\n", c);
+                //char ed = GetWindowText(edit_id, c, 1);
+                char stat = GetWindowText(bt_2_id, d, 100);
+                //printf("%s\n", stat);
+                if(ed = stat)
                 {
                     MessageBox(0, "Верно!", "Message", MB_OK);
                 }
                 else MessageBox(0, "Не верно", "Message", MB_OK);
+            }
+
         }
 
 //        if(LOWORD(wparam) == edit_id)
